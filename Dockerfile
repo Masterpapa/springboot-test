@@ -4,7 +4,7 @@ FROM openjdk:11
 ARG JAR_FILE=target/hrms.jar
 
 # cd /opt/app
-WORKDIR /app
+WORKDIR /opt/app
 
 # cp target/hrms.jar /app/app.jar
 COPY ${JAR_FILE} app.jar
