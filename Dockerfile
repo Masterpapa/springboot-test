@@ -1,12 +1,10 @@
 FROM openjdk:11
 
-# Refer to Maven build -> finalName
-ARG JAR_FILE=target/hrms.jar
+ARG JAR_FILE=target/*.jar
 
+COPY ${JAR_FILE} /
 
-
-# cp target/hrms.jar /app/app.jar
-COPY ${JAR_FILE} app.jar
+EXPOSE 8081
 
 # java -jar /opt/app/app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java","-jar","/hrms.jar"]
