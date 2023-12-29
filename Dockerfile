@@ -1,10 +1,9 @@
 FROM openjdk:11
 
-ARG JAR_FILE=target/*.jar
+ARG JAR_FILE=target/hrms.jar
 
-COPY ${JAR_FILE} /
+COPY ${JAR_FILE} app.jar
 
 EXPOSE 8081
 
-# java -jar /opt/app/app.jar
-ENTRYPOINT ["java","-jar","/hrms.jar"]
+ENTRYPOINT ["java","-jar","/app.jar"]
